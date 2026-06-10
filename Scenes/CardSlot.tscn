@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://v16qcoyolyew"]
+
+[ext_resource type="Script" uid="uid://cspduhkjuwgfb" path="res://Scripts/TauhanCardSlot.gd" id="1_mt86f"]
+[ext_resource type="Texture2D" uid="uid://c4nxyk8d3oyi7" path="res://Assets/EmptyCardSlot.png" id="2_r3qn0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt86f"]
+size = Vector2(181, 264)
+
+[node name="CardSlot" type="Node2D" unique_id=415825986]
+script = ExtResource("1_mt86f")
+
+[node name="CardSlotImage" type="Sprite2D" parent="." unique_id=1381110245]
+position = Vector2(1.4999983, 4.500013)
+scale = Vector2(0.5078125, 0.55273443)
+texture = ExtResource("2_r3qn0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=700107608]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=740508996]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_mt86f")

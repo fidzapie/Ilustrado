@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://c1qdl0s6h3h24"]
+
+[ext_resource type="Script" uid="uid://g2remjo71ff" path="res://Scripts/CardManager.gd" id="1_abhb2"]
+[ext_resource type="Script" uid="uid://dld0k3mt1ratf" path="res://Scripts/GameSetUp.gd" id="1_n435d"]
+[ext_resource type="PackedScene" uid="uid://v16qcoyolyew" path="res://Scenes/CardSlot.tscn" id="2_iyrtt"]
+[ext_resource type="Script" uid="uid://c64ct1jgmhxyb" path="res://Scripts/HakbangCardSlot.gd" id="3_n435d"]
+[ext_resource type="Script" uid="uid://bq0ute4op5fba" path="res://Scripts/PlayerHand.gd" id="4_y18dy"]
+[ext_resource type="Script" uid="uid://muxiy6mil08q" path="res://Scripts/Deck.gd" id="5_0hw01"]
+[ext_resource type="Texture2D" uid="uid://dsnyslblyajpa" path="res://Assets/Card Cover.png" id="6_31q26"]
+[ext_resource type="Script" uid="uid://cbx07e80jio6k" path="res://Scripts/InputManager.gd" id="7_iyrtt"]
+[ext_resource type="Script" uid="uid://6h50n2f07ktg" path="res://Scripts/BattleManager.gd" id="7_r265d"]
+[ext_resource type="Texture2D" uid="uid://cvtaihmoo1gvj" path="res://Assets/DiscardPileSlot.png" id="10_n435d"]
+[ext_resource type="Texture2D" uid="uid://c1lk3o6gc2q1k" path="res://Assets/Boarder3.png" id="12_0hw01"]
+[ext_resource type="Texture2D" uid="uid://0xq2rig3yi3t" path="res://Assets/EndButton.tres" id="12_31q26"]
+[ext_resource type="Texture2D" uid="uid://b7vhbu1fokya3" path="res://Assets/PassButton.tres" id="13_r265d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n435d"]
+size = Vector2(384, 514)
+
+[node name="PlayerField" type="Node2D" unique_id=198604588]
+script = ExtResource("1_n435d")
+
+[node name="CardManager" type="Node2D" parent="." unique_id=1175641342]
+script = ExtResource("1_abhb2")
+
+[node name="CardSlots" type="Node2D" parent="." unique_id=188945108]
+
+[node name="CardSlot3" parent="CardSlots" unique_id=415825986 instance=ExtResource("2_iyrtt")]
+position = Vector2(960, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot2" parent="CardSlots" unique_id=2067512700 instance=ExtResource("2_iyrtt")]
+position = Vector2(820, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot6" parent="CardSlots" unique_id=1896371990 instance=ExtResource("2_iyrtt")]
+position = Vector2(960, 750)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("3_n435d")
+
+[node name="CardSlot4" parent="CardSlots" unique_id=1772215286 instance=ExtResource("2_iyrtt")]
+position = Vector2(1100, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot1" parent="CardSlots" unique_id=461476430 instance=ExtResource("2_iyrtt")]
+position = Vector2(680, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot5" parent="CardSlots" unique_id=1652597909 instance=ExtResource("2_iyrtt")]
+position = Vector2(1240, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="PlayerHand" type="Node2D" parent="." unique_id=1903845474]
+script = ExtResource("4_y18dy")
+
+[node name="Deck" type="Node2D" parent="." unique_id=1266463024]
+position = Vector2(140, 955)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("5_0hw01")
+
+[node name="Sprite2D" type="Sprite2D" parent="Deck" unique_id=251834171]
+z_index = -2
+texture = ExtResource("6_31q26")
+
+[node name="Area2D" type="Area2D" parent="Deck" unique_id=1224705239]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D" unique_id=1109312495]
+shape = SubResource("RectangleShape2D_n435d")
+
+[node name="CardCount" type="RichTextLabel" parent="Deck" unique_id=1423318878]
+modulate = Color(0.38039216, 0.20392157, 0.11764706, 1)
+z_index = 1
+offset_left = 57.5
+offset_top = -1177.4999
+offset_right = 77.5
+offset_bottom = -1137.4999
+scale = Vector2(6, 6)
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="DeckTimer" type="Timer" parent="Deck" unique_id=1542337530]
+
+[node name="InputManager" type="Node2D" parent="." unique_id=2125373751]
+script = ExtResource("7_iyrtt")
+
+[node name="BattleManager" type="Node" parent="." unique_id=466315429]
+script = ExtResource("7_r265d")
+
+[node name="BattleTimer" type="Timer" parent="." unique_id=1189345907]
+
+[node name="PlayerHealth" type="RichTextLabel" parent="." unique_id=104732282]
+modulate = Color(0.38039216, 0.20392157, 0.11764706, 1)
+z_index = 1
+offset_left = 161.0
+offset_top = 374.0
+offset_right = 181.0
+offset_bottom = 414.0
+scale = Vector2(2.5, 2.5)
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerMana" type="RichTextLabel" parent="." unique_id=1541761200]
+modulate = Color(0.4, 0.18039216, 0.07450981, 1)
+z_index = 1
+offset_left = 161.0
+offset_top = 428.0
+offset_right = 181.0
+offset_bottom = 468.0
+scale = Vector2(2.5, 2.5)
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerDiscard" type="Node2D" parent="." unique_id=1421240886]
+position = Vector2(1500, 660)
+scale = Vector2(0.6, 0.6)
+
+[node name="DiscardPileSprite" type="Sprite2D" parent="PlayerDiscard" unique_id=1221397731]
+position = Vector2(0.5, -1.5001221)
+scale = Vector2(0.5286458, 0.5253906)
+texture = ExtResource("10_n435d")
+
+[node name="StatusLabel" type="Label" parent="." unique_id=1210442497]
+modulate = Color(0.3019608, 0.12941177, 0.03137255, 1)
+z_index = 3
+offset_left = 83.000015
+offset_top = 334.0
+offset_right = 223.00002
+offset_bottom = 376.0
+scale = Vector2(0.9, 0.9)
+theme_override_font_sizes/font_size = 30
+text = "Attacking"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=291272148]
+
+[node name="Hp,mana,cardcount" type="Sprite2D" parent="." unique_id=1350850451]
+position = Vector2(157, 489.00003)
+scale = Vector2(0.867, 0.895)
+texture = ExtResource("12_0hw01")
+
+[node name="PASSBUTTON" type="TextureButton" parent="." unique_id=82385406]
+z_index = 3
+offset_left = 289.0
+offset_top = 387.0
+offset_right = 465.0
+offset_bottom = 562.0
+texture_normal = ExtResource("12_31q26")
+
+[node name="ENDTURNBUTTON" type="TextureButton" parent="." unique_id=2098980195]
+z_index = 3
+offset_left = 289.0
+offset_top = 387.0
+offset_right = 465.0
+offset_bottom = 562.0
+texture_normal = ExtResource("13_r265d")
+
+[connection signal="pressed" from="PASSBUTTON" to="BattleManager" method="_on_pass_button_pressed"]
+[connection signal="pressed" from="ENDTURNBUTTON" to="BattleManager" method="_on_end_turn_button_pressed"]

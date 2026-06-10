@@ -1,0 +1,252 @@
+[gd_scene format=3 uid="uid://bujrj565gm6v3"]
+
+[ext_resource type="Script" uid="uid://c3blpxis5uh21" path="res://Scripts/Card.gd" id="1_hael8"]
+[ext_resource type="Texture2D" uid="uid://dsnyslblyajpa" path="res://Assets/Card Cover.png" id="2_3p273"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h8wm0"]
+load_path = "res://.godot/imported/KatipuneroCard.png-777a4d16e9220e05c0e57e19321426e2.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hael8"]
+size = Vector2(382, 508)
+
+[sub_resource type="Animation" id="Animation_3m7nw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Health:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardBackImage:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CardBackImage:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CardImage:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CardImage:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Mana:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kphy1"]
+resource_name = "card_flip"
+length = 0.33333334
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Health:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardBackImage:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CardBackImage:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, -1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CardImage:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CardImage:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 1), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Mana:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wejov"]
+_data = {
+&"RESET": SubResource("Animation_3m7nw"),
+&"card_flip": SubResource("Animation_kphy1")
+}
+
+[node name="Card" type="Node2D" unique_id=1849122457]
+position = Vector2(140, 955)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_hael8")
+
+[node name="CardBackImage" type="Sprite2D" parent="." unique_id=1312063291]
+texture = ExtResource("2_3p273")
+
+[node name="CardImage" type="Sprite2D" parent="." unique_id=1222807269]
+z_index = -1
+position = Vector2(-1, -1)
+texture = SubResource("CompressedTexture2D_h8wm0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1569780923]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=117074188]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_hael8")
+
+[node name="Attack" type="RichTextLabel" parent="." unique_id=1099261633]
+modulate = Color(0, 0, 0, 0)
+offset_left = -140.0
+offset_top = 165.00003
+offset_right = -118.75
+offset_bottom = 192.50003
+scale = Vector2(3, 3)
+text = "0"
+
+[node name="Health" type="RichTextLabel" parent="." unique_id=894749129]
+modulate = Color(0, 0, 0, 0)
+offset_left = 122.499985
+offset_top = 162.49994
+offset_right = 144.99997
+offset_bottom = 189.99994
+scale = Vector2(3, 3)
+text = "0"
+
+[node name="Mana" type="RichTextLabel" parent="." unique_id=1482808868]
+modulate = Color(0, 0, 0, 0)
+offset_left = -145.0
+offset_top = -240.0
+offset_right = -122.500015
+offset_bottom = -212.5
+scale = Vector2(3, 3)
+text = "0"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=941313867]
+libraries/ = SubResource("AnimationLibrary_wejov")
+
+[node name="Ability" type="RichTextLabel" parent="." unique_id=1490269617]
+modulate = Color(0.015686275, 0.015686275, 0.015686275, 0)
+offset_left = -73.0
+offset_top = 62.0
+offset_right = 81.999985
+offset_bottom = 122.00006
+text = "Default text"
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dap6k2vm76fps"]
+
+[ext_resource type="Script" uid="uid://cspduhkjuwgfb" path="res://Scripts/TauhanCardSlot.gd" id="1_338b4"]
+[ext_resource type="Texture2D" uid="uid://c4nxyk8d3oyi7" path="res://Assets/EmptyCardSlot.png" id="2_m7x22"]
+
+[node name="CardSlot" type="Node2D" unique_id=415825986]
+script = ExtResource("1_338b4")
+
+[node name="CardSlotImage" type="Sprite2D" parent="." unique_id=242540686]
+position = Vector2(1.4999983, 4.500013)
+scale = Vector2(0.5078125, 0.55273443)
+texture = ExtResource("2_m7x22")

@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cabjgyx1dsknb"]
+
+[ext_resource type="PackedScene" uid="uid://dap6k2vm76fps" path="res://Scenes/OpponentCardSlot.tscn" id="2_6co0t"]
+[ext_resource type="Script" uid="uid://dn27f7ynydd3s" path="res://Scripts/OpponentHand.gd" id="3_1vcqv"]
+[ext_resource type="Script" uid="uid://c0rm4dgslupm1" path="res://Scripts/OpponentDeck.gd" id="4_gd4hq"]
+[ext_resource type="Texture2D" uid="uid://cvtaihmoo1gvj" path="res://Assets/DiscardPileSlot.png" id="5_6gdow"]
+[ext_resource type="Texture2D" uid="uid://dsnyslblyajpa" path="res://Assets/Card Cover.png" id="5_j3x2b"]
+[ext_resource type="Texture2D" uid="uid://cisyokaokdck8" path="res://Assets/MainBoard.png" id="6_6gdow"]
+[ext_resource type="Texture2D" uid="uid://c1lk3o6gc2q1k" path="res://Assets/Boarder3.png" id="7_1vcqv"]
+
+[node name="OpponentField" type="Node2D" unique_id=1564593822]
+
+[node name="CardManager" type="Node2D" parent="." unique_id=1798704314]
+
+[node name="CardSlots" type="Node2D" parent="." unique_id=1213614395]
+
+[node name="CardSlot3" parent="CardSlots" unique_id=415825986 instance=ExtResource("2_6co0t")]
+position = Vector2(960, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot4" parent="CardSlots" unique_id=1866428060 instance=ExtResource("2_6co0t")]
+position = Vector2(820, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot5" parent="CardSlots" unique_id=1900193732 instance=ExtResource("2_6co0t")]
+position = Vector2(680, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot2" parent="CardSlots" unique_id=1922025857 instance=ExtResource("2_6co0t")]
+position = Vector2(1100, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot1" parent="CardSlots" unique_id=1372282222 instance=ExtResource("2_6co0t")]
+position = Vector2(1240, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot6" parent="CardSlots" unique_id=1416339239 instance=ExtResource("2_6co0t")]
+position = Vector2(960, 180)
+scale = Vector2(0.6, 0.6)
+
+[node name="OpponentHand" type="Node2D" parent="." unique_id=1443726531]
+script = ExtResource("3_1vcqv")
+
+[node name="OpponentDeck" type="Node2D" parent="." unique_id=1854869455]
+position = Vector2(1780, 125)
+script = ExtResource("4_gd4hq")
+
+[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck" unique_id=1634669078]
+z_index = -2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_j3x2b")
+
+[node name="CardCount" type="RichTextLabel" parent="OpponentDeck" unique_id=203433812]
+modulate = Color(0.42352942, 0.2, 0.09019608, 1)
+z_index = 1
+offset_left = -48.0
+offset_top = 359.0
+offset_right = -28.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+text = "0"
+
+[node name="OpponentHealth" type="RichTextLabel" parent="." unique_id=2067381473]
+modulate = Color(0.42352942, 0.2, 0.09019608, 1)
+z_index = 1
+offset_left = 1730.0
+offset_top = 374.0
+offset_right = 1750.0
+offset_bottom = 414.0
+scale = Vector2(2.5, 2.5)
+text = "0"
+
+[node name="OpponentMana" type="RichTextLabel" parent="." unique_id=1220992781]
+modulate = Color(0.42352942, 0.2, 0.09019608, 1)
+z_index = 1
+offset_left = 1730.0
+offset_top = 427.0
+offset_right = 1750.0
+offset_bottom = 467.0
+scale = Vector2(2.5, 2.5)
+text = "1"
+
+[node name="OpponentDiscard" type="Node2D" parent="." unique_id=1142950058]
+position = Vector2(400, 270)
+scale = Vector2(0.6, 0.6)
+
+[node name="DiscardPileSprite" type="Sprite2D" parent="OpponentDiscard" unique_id=289643941]
+position = Vector2(0.500003, -1.4999998)
+scale = Vector2(0.5286458, 0.5253906)
+texture = ExtResource("5_6gdow")
+
+[node name="StatusLabel" type="Label" parent="." unique_id=1304697517]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+offset_left = 1711.0
+offset_top = 333.0
+offset_right = 1968.0
+offset_bottom = 375.0
+theme_override_font_sizes/font_size = 30
+text = "Attacking"
+
+[node name="Hp,mana,cardcount" type="Sprite2D" parent="." unique_id=551217151]
+position = Vector2(1770.5599, 490)
+scale = Vector2(0.8616667, 0.895)
+texture = ExtResource("7_1vcqv")
+flip_h = true
+
+[node name="Baord2" type="Sprite2D" parent="." unique_id=2130334141]
+modulate = Color(1, 1, 1, 0.7372549)
+z_index = -5
+position = Vector2(960, 469)
+scale = Vector2(1.1471292, 1.2986186)
+texture = ExtResource("6_6gdow")
